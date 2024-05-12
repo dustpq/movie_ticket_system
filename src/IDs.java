@@ -40,6 +40,7 @@ public class IDs {
         }
     }
 
+
     // Method to get a user's password
     public static String getUserPassword(String username) {
         try (BufferedReader in = new BufferedReader(new FileReader("resources" + File.separator + "users.txt"))) {

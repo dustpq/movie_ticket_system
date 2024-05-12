@@ -34,7 +34,7 @@ public class movie1_info {
     private JCheckBox d3CheckBox1;
     private JButton reserveSeatsButton;
 
-    private boolean isGuest;
+    private boolean isGuest = false;
 
     public movie1_info(boolean isguest) {
         this.isGuest = isguest;
