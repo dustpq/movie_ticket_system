@@ -34,10 +34,10 @@ public class movie1_info {
     private JCheckBox d3CheckBox1;
     private JButton reserveSeatsButton;
 
-    private boolean isGuest = false;
+    private String username = "";
 
-    public movie1_info(boolean isguest) {
-        this.isGuest = isguest;
+    public movie1_info(boolean isGuest, String username) {
+        this.username = username;
 
         JFrame frame = new JFrame("Titanic");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -103,6 +103,7 @@ public class movie1_info {
                                     writer.write(((JCheckBox) component).getText() + " ");
                                 }
                             }
+                            writer.write(" for " + username + "\n");
                         }
                         writer.close();
                     } catch (IOException ioException) {
@@ -118,6 +119,7 @@ public class movie1_info {
                                     writer.write(((JCheckBox) component).getText() + " ");
                                 }
                             }
+                            writer.write(" for " + username + "\n");
                         }
                         writer.close();
                     } catch (IOException ioException) {

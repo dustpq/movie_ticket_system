@@ -22,7 +22,6 @@ public class guestMovieMenu {
         frame.setLocationRelativeTo(null);
 
 
-
         // Load the image
         ImageIcon movieIcon1 = new ImageIcon(getClass().getResource("/images/titanic.jpg"));
         // Scale the image
@@ -64,7 +63,7 @@ public class guestMovieMenu {
         label4.setIcon(scaledIcon4);
 
         button1.addActionListener(e -> {
-            new movie1_info(true);
+            new movie1_info(true, "");
         });
 
         button2.addActionListener(e -> {
