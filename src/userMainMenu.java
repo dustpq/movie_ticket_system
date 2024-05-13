@@ -19,10 +19,9 @@ public class userMainMenu {
 
         welcomeUserText.setText("Welcome, " + username + "! What would you like to do?");
 
-        /*reserveMovieTicketsButton.addActionListener(e -> {
-            //new reserveMovieTickets(username);
-            frame.dispose();
-        });*/
+        reserveMovieTicketsButton.addActionListener(e -> {
+            new MovieMenu(false, username);
+        });
 
     }
 
