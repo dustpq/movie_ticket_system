@@ -6,6 +6,7 @@ public class userMainMenu {
     private JButton buyConcessionsButton;
     private JButton editMovieTicketsButton;
     private JPanel panel1;
+    private JButton signOutButton;
 
     public userMainMenu(String username) {
 
@@ -26,8 +27,13 @@ public class userMainMenu {
             new concessions();
         });
 
-        editMovieTicketsButton.addActionListener(e -> {
+        /*editMovieTicketsButton.addActionListener(e -> {
             //new editTickets(username);
+        });*/
+
+        signOutButton.addActionListener(e -> {
+            new returningAsk();
+            frame.dispose();
         });
 
     }
