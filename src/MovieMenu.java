@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class guestMovieMenu {
+public class MovieMenu {
     private JPanel panel1;
     private JButton button1;
     private JButton button2;
@@ -11,10 +11,11 @@ public class guestMovieMenu {
     private JLabel label2;
     private JLabel label3;
     private JLabel label4;
+    private JLabel tiptext;
 
 
-    public guestMovieMenu() {
-        JFrame frame = new JFrame("Guest Main Menu");
+    public MovieMenu(boolean isGuest, String username) {
+        JFrame frame = new JFrame("Movie Menu");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(700, 600);
         frame.add(panel1);
@@ -24,12 +25,9 @@ public class guestMovieMenu {
 
         // Load the image
         ImageIcon movieIcon1 = new ImageIcon(getClass().getResource("/images/titanic.jpg"));
-        // Scale the image
         Image image1 = movieIcon1.getImage();
         Image scaledImage1 = image1.getScaledInstance(150, 200, Image.SCALE_SMOOTH);
-        // Create a new ImageIcon from the scaled image
         ImageIcon scaledIcon1 = new ImageIcon(scaledImage1);
-        // Set the icon of button1 to the scaled image
         label1.setIcon(scaledIcon1);
 
         // Load the image
