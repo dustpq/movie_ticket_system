@@ -29,7 +29,7 @@ public class concessions {
         ChangeListener changeListener = e -> {
 
             double total = Integer.parseInt(popcorn_spinner.getValue().toString()) * 5 +
-                    Integer.parseInt(soda_spinner.getValue().toString()) * 3 +
+                    Integer.parseInt(soda_spinner.getValue().toString()) +
                     Integer.parseInt(candy_spinner.getValue().toString()) * 2 +
                     Integer.parseInt(hotdog_spinner.getValue().toString()) * 4;
 
@@ -47,10 +47,10 @@ public class concessions {
         taxAmount.setText("$0.00");
         totalAmount.setText("$0.00");
 
-        SpinnerNumberModel plimiter = new SpinnerNumberModel(0, 0, 100, 1);
-        SpinnerNumberModel slimiter = new SpinnerNumberModel(0, 0, 100, 1);
-        SpinnerNumberModel climiter = new SpinnerNumberModel(0, 0, 100, 1);
-        SpinnerNumberModel hlimiter = new SpinnerNumberModel(0, 0, 100, 1);
+        SpinnerNumberModel plimiter = new SpinnerNumberModel(0, 0, 50, 1);
+        SpinnerNumberModel slimiter = new SpinnerNumberModel(0, 0, 50, 1);
+        SpinnerNumberModel climiter = new SpinnerNumberModel(0, 0, 50, 1);
+        SpinnerNumberModel hlimiter = new SpinnerNumberModel(0, 0, 50, 1);
 
         popcorn_spinner.setModel(plimiter);
         soda_spinner.setModel(slimiter);
@@ -67,10 +67,10 @@ public class concessions {
             double tax = Double.parseDouble(taxAmount.getText().substring(1));
 
             JOptionPane.showMessageDialog(null, "Receipt:\n\n" +
-                    soda_spinner.getValue() + " popcorn: $" + Integer.parseInt(popcorn_spinner.getValue().toString()) * 5 + "\n" +
-                    popcorn_spinner.getValue() + " soda: $" + Integer.parseInt(soda_spinner.getValue().toString()) * 3 + "\n" +
-                    hotdog_spinner.getValue() + " candy box: $" + Integer.parseInt(candy_spinner.getValue().toString()) * 2 + "\n" +
-                    candy_spinner.getValue() + " hotdog: $" + Integer.parseInt(hotdog_spinner.getValue().toString()) * 4 + "\n\n" +
+                    popcorn_spinner.getValue() + " popcorn: $" + Integer.parseInt(popcorn_spinner.getValue().toString()) * 5 + "\n" +
+                    soda_spinner.getValue() + " soda: $" + Integer.parseInt(soda_spinner.getValue().toString()) + "\n" +
+                    candy_spinner.getValue() + " candy box: $" + Integer.parseInt(candy_spinner.getValue().toString()) * 2 + "\n" +
+                    hotdog_spinner.getValue() + " hotdog: $" + Integer.parseInt(hotdog_spinner.getValue().toString()) * 4 + "\n\n" +
                     "Tax: " + taxAmount.getText() + "\n" +
                     "Total: " + totalAmount.getText() + "\n\n" +
                     "Please be sure to finalize your selection with a cashier and a picture of this receipt. " + "\n"+
