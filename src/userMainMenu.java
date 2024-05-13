@@ -8,11 +8,7 @@ public class userMainMenu {
     private JButton editSnacksButton;
     private JPanel panel1;
 
-    private String username;
-
     public userMainMenu(String username) {
-
-        this.username = username;
 
         JFrame frame = new JFrame("User Main Menu");
         frame.setContentPane(panel1);
