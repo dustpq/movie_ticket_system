@@ -15,7 +15,7 @@ public class registerAsk {
         frame.setLocationRelativeTo(null);
 
         continueAsGuestButton.addActionListener(e -> {
-            new guestMainMenu(true);
+            new guestMainMenu(true, "");
             frame.dispose();
         });
 
