@@ -22,7 +22,6 @@ public class returningUserLogin {
 
             if (IDs.getTestUsername().equals(enteredUsername) && IDs.getTestPassword().equals(enteredPassword)) {
                 // Correct username and password for test user
-                // Proceed with login
                 System.out.println("Test user logged in");
 
                 new userMainMenu(enteredUsername);
@@ -32,14 +31,15 @@ public class returningUserLogin {
 
             else if (IDs.getAdminUsername().equals(enteredUsername) && IDs.getAdminPassword().equals(enteredPassword)) {
                 // Correct username and password for admin user
-                // Proceed with login
                 System.out.println("Admin user logged in");
+
+                new adminMainMenu();
+                frame.dispose();
 
             }
 
             else if (IDs.getUserPassword(enteredUsername) != null && IDs.getUserPassword(enteredUsername).equals(enteredPassword)) {
-                // Correct username and password for a new user
-                // Proceed with login
+                // Correct username and password for a registered user
                 System.out.println("New user logged in");
 
                 new userMainMenu(enteredUsername);
