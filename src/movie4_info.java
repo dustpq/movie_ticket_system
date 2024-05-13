@@ -36,7 +36,7 @@ public class movie4_info {
 
     public movie4_info(boolean isGuest, String username) {
 
-        JFrame frame = new JFrame("Titanic");
+        JFrame frame = new JFrame("Cinderella");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(panel1);
         frame.setSize(700, 600);

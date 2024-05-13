@@ -34,10 +34,7 @@ public class movie1_info {
     private JCheckBox d3CheckBox1;
     private JButton reserveSeatsButton;
 
-    private String username = "";
-
     public movie1_info(boolean isGuest, String username) {
-        this.username = username;
 
         JFrame frame = new JFrame("Titanic");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -77,16 +74,24 @@ public class movie1_info {
         reserveSeatsButton.addActionListener(e -> {
             StringBuilder reservedSeats = new StringBuilder();
             JPanel panel = a600pmRadioButton.isSelected() ? time1 : time2;
+            String showTime = a600pmRadioButton.isSelected() ? "600pm" : "800pm";
             for (Component component : panel.getComponents()) {
                 if (component instanceof JCheckBox) {
-                    if (((JCheckBox) component).isSelected()) {
-                        reservedSeats.append(((JCheckBox) component).getText()).append(" ");
+                    JCheckBox checkBox = (JCheckBox) component;
+                    if (checkBox.isSelected()) {
+                        String seat = checkBox.getText();
+                        if (isSeatReserved(seat, showTime)) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Seat " + seat + " is already reserved for the " + showTime + " show.",
+                                    "Seat Already Reserved", JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+                        reservedSeats.append(seat).append(" ");
                     }
                 }
             }
 
             if (isGuest) {
-                // Show a message dialog for guests
                 JOptionPane.showMessageDialog(null,
                         "Please show this to the front desk to confirm your seats." + "\n" +
                         "The reserved seats are: " + reservedSeats.toString(), "Reserved Seats", JOptionPane.INFORMATION_MESSAGE);
@@ -94,16 +99,19 @@ public class movie1_info {
 
             else {
                 if (a600pmRadioButton.isSelected()) {
+
                     try {
-                        FileWriter writer = new FileWriter("src/resources/guest_movie1_600pm.txt");
+                        FileWriter writer = new FileWriter("src/resources/movie1_600pm.txt", true);
                         writer.write("Seats reserved: ");
                         for (Component component : time1.getComponents()) {
                             if (component instanceof JCheckBox) {
-                                if (((JCheckBox) component).isSelected()) {
+
+                                    if (((JCheckBox) component).isSelected()) {
                                     writer.write(((JCheckBox) component).getText() + " ");
-                                }
+                                    writer.write("for " + username + "\n");
+                                    }
+
                             }
-                            writer.write(" for " + username + "\n");
                         }
                         writer.close();
                     } catch (IOException ioException) {
@@ -111,15 +119,15 @@ public class movie1_info {
                     }
                 } else if (a800pmRadioButton.isSelected()) {
                     try {
-                        FileWriter writer = new FileWriter("src/resources/guest_movie1_800pm.txt");
+                        FileWriter writer = new FileWriter("src/resources/guest_movie1_800pm.txt", true);
                         writer.write("Seats reserved: ");
                         for (Component component : time2.getComponents()) {
                             if (component instanceof JCheckBox) {
                                 if (((JCheckBox) component).isSelected()) {
                                     writer.write(((JCheckBox) component).getText() + " ");
+                                    writer.write("for " + username + "\n");
                                 }
                             }
-                            writer.write(" for " + username + "\n");
                         }
                         writer.close();
                     } catch (IOException ioException) {
@@ -129,11 +137,34 @@ public class movie1_info {
 
                 // Show a message dialog for registered users
                 JOptionPane.showMessageDialog(null,
-                        "Your reserved seats are:" + reservedSeats.toString());
+                        "Your reserved seats are: " + reservedSeats.toString());
 
             }
 
         });
 
     }
+
+    public boolean isSeatReserved(String seat, String showTime) {
+        String filename = "";
+        if (showTime.equals("600pm")) {
+            filename = "src/resources/movie1_600pm.txt";
+        } else if (showTime.equals("800pm")) {
+            filename = "src/resources/guest_movie1_800pm.txt";
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(seat)) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
 }

@@ -36,7 +36,7 @@ public class movie3_info {
 
     public movie3_info(boolean isGuest, String username) {
 
-        JFrame frame = new JFrame("Titanic");
+        JFrame frame = new JFrame("Kung Fu Panda");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(panel1);
         frame.setSize(700, 600);

@@ -36,7 +36,7 @@ public class movie2_info {
 
     public movie2_info(boolean isGuest, String username) {
 
-        JFrame frame = new JFrame("Titanic");
+        JFrame frame = new JFrame("Mario Movie");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(panel1);
         frame.setSize(700, 600);
