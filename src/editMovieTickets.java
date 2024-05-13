@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 public class editMovieTickets {
     private JComboBox comboBox1;
-    private JTextField txtText;
+    private JTextArea txtText;
     private JPanel panel;
     private JLabel editAsk;
     private JButton saveChangesButton;
