@@ -5,7 +5,7 @@ public class guestMainMenu {
     private JButton buyMovieTicketsButton;
     private JButton buyConcessionsButton;
 
-    public guestMainMenu(boolean b) {
+    public guestMainMenu(boolean isGuest, String username) {
 
         JFrame frame = new JFrame("Guest Main Menu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,7 +15,7 @@ public class guestMainMenu {
         frame.setLocationRelativeTo(null);
 
         buyMovieTicketsButton.addActionListener(e -> {
-            new guestMovieMenu();
+            new MovieMenu(isGuest, username);
         });
 
         buyConcessionsButton.addActionListener(e -> {
