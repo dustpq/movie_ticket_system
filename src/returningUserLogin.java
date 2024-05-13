@@ -5,8 +5,10 @@ public class returningUserLogin {
     private JPasswordField passwordField1;
     private JTextField textField1;
     private JButton loginButton;
+    private JButton goBackButton;
 
     public returningUserLogin() {
+
         JFrame frame = new JFrame("Login");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 200);
@@ -23,6 +25,9 @@ public class returningUserLogin {
                 // Proceed with login
                 System.out.println("Test user logged in");
 
+                new userMainMenu(enteredUsername);
+                frame.dispose();
+
             }
 
             else if (IDs.getAdminUsername().equals(enteredUsername) && IDs.getAdminPassword().equals(enteredPassword)) {
@@ -37,6 +42,9 @@ public class returningUserLogin {
                 // Proceed with login
                 System.out.println("New user logged in");
 
+                new userMainMenu(enteredUsername);
+                frame.dispose();
+
             }
 
             else {
@@ -44,6 +52,11 @@ public class returningUserLogin {
                 System.out.println("Incorrect credentials entered");
                 JOptionPane.showMessageDialog(frame, "Incorrect username or password", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        });
+
+        goBackButton.addActionListener(e -> {
+            new returningAsk();
+            frame.dispose();
         });
 
     }
