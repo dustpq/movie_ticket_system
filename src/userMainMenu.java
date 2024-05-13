@@ -3,9 +3,8 @@ import javax.swing.*;
 public class userMainMenu {
     private JLabel welcomeUserText;
     private JButton reserveMovieTicketsButton;
-    private JButton purchaseSnacksButton;
+    private JButton buyConcessionsButton;
     private JButton editMovieTicketsButton;
-    private JButton editSnacksButton;
     private JPanel panel1;
 
     public userMainMenu(String username) {
