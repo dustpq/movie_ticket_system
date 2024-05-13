@@ -4,6 +4,7 @@ public class registerAsk {
     private JPanel panel1;
     private JButton continueAsGuestButton;
     private JButton registerAccountButton;
+    private JButton goBackButton;
 
     public registerAsk() {
         JFrame frame = new JFrame("Welcome to the movie ticket booking system!");
@@ -22,6 +23,12 @@ public class registerAsk {
             new newUserRegister();
             frame.dispose();
         });
+
+        goBackButton.addActionListener(e -> {
+            new returningAsk();
+            frame.dispose();
+        });
+
     }
 
 }
