@@ -5,6 +5,7 @@ public class adminMainMenu {
     private JPanel panel1;
     private JButton editMovieTicketsButton;
     private JButton editUserCredentialsButton;
+    private JButton signOutButton;
 
     public adminMainMenu() {
         JFrame frame = new JFrame("Admin Main Menu");
@@ -20,6 +21,11 @@ public class adminMainMenu {
 
         editUserCredentialsButton.addActionListener(e -> {
             new editUserCredentials();
+        });
+
+        signOutButton.addActionListener(e -> {
+            new returningAsk();
+            frame.dispose();
         });
 
     }
