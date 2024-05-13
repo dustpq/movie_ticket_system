@@ -17,7 +17,7 @@ public class userMainMenu {
         JFrame frame = new JFrame("User Main Menu");
         frame.setContentPane(panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700, 600);
+        frame.setSize(400, 300);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
 
