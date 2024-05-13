@@ -1,4 +1,4 @@
-This is my project and it needs a readme so here you go.
+This is my project, and it needs a readme so here you go.
 
                                        /\
                                       /  \
