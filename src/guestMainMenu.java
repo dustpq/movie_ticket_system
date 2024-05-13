@@ -19,7 +19,7 @@ public class guestMainMenu {
         });
 
         buyConcessionsButton.addActionListener(e -> {
-            new guestConcessions();
+            new concessions();
         });
 
     }

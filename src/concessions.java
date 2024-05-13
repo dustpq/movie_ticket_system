@@ -1,7 +1,7 @@
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
-public class guestConcessions {
+public class concessions {
     private JPanel panel1;
     private JSpinner soda_spinner;
     private JSpinner popcorn_spinner;
@@ -17,7 +17,7 @@ public class guestConcessions {
     private JTextField taxAmount;
     private JLabel taxLabel;
 
-    public guestConcessions() {
+    public concessions() {
 
         JFrame frame = new JFrame("Concessions");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
