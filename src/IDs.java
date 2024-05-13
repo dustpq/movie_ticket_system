@@ -33,7 +33,7 @@ public class IDs {
 
     // Method to add a new user
     public static void addUser(String email, String username, String password) {
-        try (PrintWriter out = new PrintWriter(new FileWriter("resources" + File.separator + "users.txt", true))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter("src/resources/users.txt", true))) {
             out.println(email + ":" + username + ":" + password);
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,12 +43,12 @@ public class IDs {
 
     // Method to get a user's password
     public static String getUserPassword(String username) {
-        try (BufferedReader in = new BufferedReader(new FileReader("resources" + File.separator + "users.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("src/resources/users.txt"))) {
             String line;
             while ((line = in.readLine()) != null) {
                 String[] parts = line.split(":");
-                if (parts[0].equals(username)) {
-                    return parts[1]; // Return the password, ignore the email
+                if (parts[1].equals(username)) {
+                    return parts[2]; // Return the password, ignore the email
                 }
             }
         } catch (IOException e) {
