@@ -22,6 +22,14 @@ public class userMainMenu {
             new MovieMenu(false, username);
         });
 
+        buyConcessionsButton.addActionListener(e -> {
+            new concessions();
+        });
+
+        editMovieTicketsButton.addActionListener(e -> {
+            //new editTickets(username);
+        });
+
     }
 
 
