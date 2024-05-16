@@ -5,9 +5,8 @@ import java.nio.file.Paths;
 
 public class editUserCredentials {
     private JPanel panel1;
-    private JTextField txtArea;
+    private JTextArea txtArea;
     private JButton saveChangesButton;
-    private JTextArea textArea1;
 
     public editUserCredentials() {
         JFrame frame = new JFrame("Edit User Credentials");
